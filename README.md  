@@ -1,0 +1,90 @@
+Discord Rent Logger Bot
+A Discord bot designed to help users log and manage rent payments, send reminders, and generate reports using Google Sheets.
+
+Features 💡
+Log rent payments with details such as amount, payment date, and user.
+Update usernames in the payment records.
+Show specific payment logs and detailed receipts.
+Delete payment entries.
+Send fortnightly reminders for upcoming rent payments.
+Generate reports for payments over a specified period.
+Integration with Claude AI for enhanced user interaction.
+Requirements ⚙️
+Python 3.7 or higher
+Discord.py library
+gspread library for Google Sheets integration
+oauth2client for Google API authentication
+requests for making HTTP requests
+python-dotenv for loading environment variables
+anthropic for Claude API integration
+Installation 🛠️
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/username/discord-rent-logger-bot.git
+cd discord-rent-logger-bot
+Install the required packages:
+
+bash
+Copy code
+pip install -r requirements.txt
+Set up your Google Sheets API credentials:
+
+Go to the Google Cloud Console, create a new project, and enable the Google Sheets API.
+Create a service account and download the credentials.json file, then place it in the project directory.
+Share your Google Sheet with the service account email (e.g., service-account@your-project-id.iam.gserviceaccount.com).
+Create a .env file in the project directory with the following variables:
+
+plaintext
+Copy code
+DISCORD_TOKEN=<your_discord_bot_token>
+CLAUDE_API_KEY=<your_claude_api_key>
+GOOGLE_SHEETS_URL=<your_google_sheet_url>
+TRASH_REMINDER_CHANNEL_ID=<your_trash_reminder_channel_id>
+REPORT_CHANNEL_ID=<your_report_channel_id>
+RENT_REMINDER_CHANNEL_ID=<your_rent_reminder_channel_id>
+Usage 📄
+Run the bot:
+
+bash
+Copy code
+python bot.py
+Use the following commands in your Discord server:
+
+!log_payment <amount>: Log a payment with a specific amount.
+!show_receipt <date>: Check if a payment was made on a specific date.
+!delete_receipt <date>: Delete a payment record for a specific date.
+!request_report [channel/dm]: Request a payment report.
+!show_all_receipts: Show all receipts logged in the system.
+!show_receipts_range <start_date> <end_date>: Show receipts within a date range.
+!start_reminder: Start reminders for upcoming payments.
+Deploying to Heroku 🚀
+Create a Heroku app:
+
+bash
+Copy code
+heroku create <app-name>
+Set up your config variables in the Heroku dashboard (as explained in the Installation section).
+
+Push the app to Heroku:
+
+bash
+Copy code
+git push heroku main
+Scale the worker:
+
+bash
+Copy code
+heroku ps:scale worker=1
+Your bot should now be running on Heroku.
+
+Contributing 🙌
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+License 📜
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments 💬
+Thanks to the Discord.py community for their support.
+Special thanks to the developers of the libraries used in this project.
